@@ -1,4 +1,4 @@
-import collections
+import collections.abc
 import json
 import logging
 import time
@@ -29,8 +29,8 @@ class NotificationType(Enum):
     MDM = 'mdm'
 
 
-RequestStream = collections.namedtuple('RequestStream', ['stream_id', 'token'])
-Notification = collections.namedtuple('Notification', ['token', 'payload'])
+RequestStream = collections.abc.namedtuple('RequestStream', ['stream_id', 'token'])
+Notification = collections.abc.namedtuple('Notification', ['token', 'payload'])
 
 DEFAULT_APNS_PRIORITY = NotificationPriority.Immediate
 CONCURRENT_STREAMS_SAFETY_MAXIMUM = 1000
